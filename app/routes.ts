@@ -6,4 +6,5 @@ export default [
   route('about', 'routes/about.tsx'),
   route('contact', 'routes/contact.tsx'),
   route('challenges', 'routes/challenges.tsx'),
+  route('change-avatar-background', 'routes/change-avatar-background.tsx'),
 ] satisfies RouteConfig;
