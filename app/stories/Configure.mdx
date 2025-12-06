@@ -1,0 +1,88 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Overview" />
+
+<div className="sb-container">
+  <section className="sb-section">
+    <h1>Overview</h1>
+
+    <span>
+      <strong>UI-Kit</strong> is a centralized, living Storybook environment built for the
+      web platform. It provides a single source of truth for all reusable
+      <code>shadcn/ui</code>-based components, enabling the team to design, build, test, and
+      document UI elements in complete isolation from the main web application.
+    </span>
+
+    <h2>Purpose</h2>
+
+    <h3>🧩 For Frontend Developers</h3>
+    <span>
+      Develop, debug, and visually test UI components in an isolated environment without needing to
+      spin up the full application. Each component includes usage examples, props documentation, and
+      interaction tests.
+    </span>
+
+    <h3>🎨 For UI/UX Designers</h3>
+    <span>
+      Explore and review interactive components independently, validate their look, feel, and
+      behavior, and ensure design consistency across all features before integration.
+    </span>
+
+    <h3>📋 For Product Owners</h3>
+    <span>
+      Maintain a standardized component library and documentation space that accelerates onboarding
+      for new developers and ensures long-term scalability of the UI system.
+    </span>
+
+    <h2>Vision</h2>
+    <span>
+      The <strong>UI-Kit</strong> is the foundation for a scalable, consistent, and
+      maintainable design system. It bridges development and design through shared, documented, and
+      tested components—ensuring every UI element in products feels cohesive and reliable.
+    </span>
+
+  </section>
+</div>
+
+<style>
+  {`
+   .sb-container {
+    margin-bottom: 48px;
+    padding: 16px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .sb-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .sb-section h2 {
+    font-size: 1.25rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .sb-section h3 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .sb-section p {
+    margin-bottom: 0.75rem;
+  }
+
+  code {
+    background: #f5f5f5;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 0.9em;
+  }
+  `}
+</style>
