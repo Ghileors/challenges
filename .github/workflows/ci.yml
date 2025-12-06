@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # --- checks ---
+      
+      - name: Prettier check
+        run: npm run prettier:check
+
+      - name: Attempt auto-write (prettier:write)
+        id: prettier_write
+        if: steps.lint.outcome == 'failure'
+        run: npm run prettier:write
+        continue-on-error: true
+
+      - name: Fail if auto-fix did not solve issues
+        if: steps.lint.outcome == 'failure' && steps.prettier_write.outcome == 'failure'
+        run: |
+          echo "❌ Prettier failed and auto-write could not resolve issues."
+          exit 1
+
+      - name: Lint
+        id: lint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Attempt auto-fix (lint:fix)
+        id: lint_fix
+        if: steps.lint.outcome == 'failure'
+        run: npm run lint:fix
+        continue-on-error: true
+
+      - name: Fail if auto-fix did not solve issues
+        if: steps.lint.outcome == 'failure' && steps.lint_fix.outcome == 'failure'
+        run: |
+          echo "❌ Linting failed and auto-fix could not resolve issues."
+          exit 1
+
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # --- builds ---
+
+      - name: Build app
+        run: npm run build

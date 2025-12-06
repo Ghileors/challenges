@@ -1,0 +1,11 @@
+import axios from 'axios';
+
+const axiosClient = axios.create({
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+  baseURL: 'http://localhost:5173/api',
+});
+
+export { axiosClient };
