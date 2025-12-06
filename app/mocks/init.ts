@@ -1,5 +1,3 @@
-initMocks();
-
 export async function initMocks() {
   if (!import.meta.env.DEV) return;
 
