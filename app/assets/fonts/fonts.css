@@ -1,0 +1,125 @@
+/* 100 - Thin */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Thin Italic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* 200 - ExtraLight */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Extralight Italic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* 300 - Light */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Light Italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* 400 - Regular */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* 500 - Medium */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Medium Italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* 600 - Demibold (maps to Semibold) */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Demibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Demibold Italic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* 700 - Bold */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Bold Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* 800 - ExtraBold */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Extrabold Italic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* 900 - Black */
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('./italian-plate/Italian Plate No2 Expanded Black Italic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
