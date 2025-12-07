@@ -6,8 +6,7 @@ export function meta() {
 
 export default function Layout() {
   return (
-    <div>
-      <h1>Main Layout</h1>
+    <div className="h-full w-full bg-gray-500">
       <main>
         <Outlet />
       </main>
