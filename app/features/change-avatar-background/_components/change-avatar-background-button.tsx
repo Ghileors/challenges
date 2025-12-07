@@ -1,7 +1,7 @@
 import CreativesIcon from '@/assets/icons/creatives-plus.svg?react';
 import { Button } from '@/components/ui/button';
 
-export const OpenSidebar = () => {
+export const ChangeAvatarBackgroundButton = () => {
   return (
     <Button
       variant="ghost"
