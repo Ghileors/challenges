@@ -1,3 +1,5 @@
+import ArrowIcon from '@/assets/icons/arrow.svg?react';
+import CloseIcon from '@/assets/icons/close.svg?react';
 import { Outlet } from 'react-router';
 
 export function meta() {
@@ -6,10 +8,15 @@ export function meta() {
 
 export default function Layout() {
   return (
-    <div className="h-full w-full bg-gray-500">
-      <main>
+    <>
+      <nav className="absolute top-0 flex h-16 w-screen items-center justify-between border-b border-[hsla(210,18%,96%,1)] px-12">
+        {/* TODO: add condition rendering for icons */}
+        <ArrowIcon /> <div>Header</div>
+        <CloseIcon />
+      </nav>
+      <main className="h-full w-full bg-gray-500">
         <Outlet />
       </main>
-    </div>
+    </>
   );
 }
