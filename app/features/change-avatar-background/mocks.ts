@@ -1,5 +1,5 @@
-import BgImage from '@/assets/images/backgrounds/bg-0.png';
-import BgImage1 from '@/assets/images/backgrounds/bg-0.png';
+import BgImage from '@/assets/images/backgrounds/bg-0.jpg';
+import BgImage1 from '@/assets/images/backgrounds/bg-1.jpg';
 
 export const backgroundImagesMock = [
   {
