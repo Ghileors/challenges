@@ -15,7 +15,7 @@ import { GenerateBackgroundButton } from './generate-background-button';
 export const BackgroundsSidebar = () => {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <div className="flex items-center justify-center gap-4">
           <ChangeAvatarBackgroundButton />
         </div>

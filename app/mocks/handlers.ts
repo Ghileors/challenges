@@ -1,12 +1,12 @@
-import { cardsResponseMock } from '@/features/sidebar/mocks';
+import { backgroundImagesMock } from '@/features/change-avatar-background/mocks';
 import { http } from 'msw';
 
-const getCards = http.get('/api/cards', async () => {
+const getBackgrounds = http.get('/api/backgrounds/:id', async () => {
   await new Promise((resolve) => setTimeout(resolve, 600));
 
-  return Response.json(cardsResponseMock, {
+  return Response.json(backgroundImagesMock, {
     status: 200,
   });
 });
 
-export const handlers = [getCards];
+export const handlers = [getBackgrounds];
