@@ -20,13 +20,14 @@ export default function Layout() {
               key={url}
               to={`/${url}`}
               className={cn(
-                'align-bottom font-[Italian_Plate_No2_Expanded] text-[12px] leading-[100%] font-semibold tracking-[0] text-[hsla(208,6%,59%,1)]',
                 'flex h-[42px] w-fit items-center justify-center gap-[6px] rounded-full pt-[16px] pr-[16px] pb-[14px] pl-[16px]',
                 'border border-[hsla(210,18%,96%,1)] backdrop-blur-[15px]',
                 'focus:border-[hsla(208,22%,83%,1)] focus:text-black'
               )}
             >
-              {url}
+              <p className="align-bottom font-[Italian_Plate_No2_Expanded] text-[12px] leading-[100%] font-semibold tracking-[0] text-[hsla(208,6%,59%,1)] first-letter:uppercase">
+                {url}
+              </p>
             </Link>
           ))}
         </div>
