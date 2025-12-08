@@ -1,5 +1,23 @@
 import React from 'react';
 
+import { AvatarCard } from './avatar-card';
+
 export const BackgroundsList = () => {
-  return <div className='"grid gap-4" grid-cols-3'>backgrounds-list</div>;
+  return (
+    <div className="space-y-2.5">
+      <p className="font-[Italian_Plate_No2_Expanded] text-[14px] leading-[120%] font-semibold tracking-[0px]">
+        Your backgrounds
+      </p>
+      <div className="grid grid-cols-3 gap-3">
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />
+        <AvatarCard />{' '}
+      </div>
+    </div>
+  );
 };
