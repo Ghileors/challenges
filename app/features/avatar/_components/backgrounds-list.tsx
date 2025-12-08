@@ -1,10 +1,18 @@
 import { Skeleton } from '@/components/ui/skeleton';
+import { useSearchParams } from 'react-router';
 
 import { useGetAvatarBackgrounds } from '../queries';
 import { AvatarCard } from './avatar-card';
 
 export function BackgroundsList() {
-  const { data, isLoading } = useGetAvatarBackgrounds('1');
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+
+  if (!id) {
+    return null;
+  }
+
+  const { data, isLoading } = useGetAvatarBackgrounds(id);
 
   if (isLoading) {
     return (

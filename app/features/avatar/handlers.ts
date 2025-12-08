@@ -19,7 +19,7 @@ export const getAvatars = http.get(`/api/${BASE_URL}/list`, async () => {
   });
 });
 
-export const getBackgrounds = http.get(`/api/${BASE_URL}/:id/backgrounds`, async () => {
+export const getBackgrounds = http.get(`/api/${BASE_URL}/backgrounds/:id`, async () => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   return Response.json(backgroundImagesMock, {
@@ -27,7 +27,7 @@ export const getBackgrounds = http.get(`/api/${BASE_URL}/:id/backgrounds`, async
   });
 });
 
-export const generateBackground = http.post(`/api/generate/${BASE_URL}/background`, async () => {
+export const generateBackground = http.post(`/api/${BASE_URL}/background`, async () => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   return Response.json(

@@ -32,7 +32,7 @@ const getAvatars = async () => {
 };
 
 const getAvatarBackgrounds = async (avatarId: string) => {
-  const response = await axiosClient.get(`/${BASE_URL}/${avatarId}/backgrounds`);
+  const response = await axiosClient.get(`/${BASE_URL}/backgrounds/${avatarId}`);
 
   const result = GetBackgroundImagesResponse.safeParse(response.data);
 
@@ -44,7 +44,7 @@ const getAvatarBackgrounds = async (avatarId: string) => {
 };
 
 const generateAvatarBackground = async (body: { avatarId: string; prompt: string }) => {
-  const response = await axiosClient.post(`/generate/${BASE_URL}/background`, body);
+  const response = await axiosClient.post(`/${BASE_URL}/background`, body);
 
   if (response.status !== 200) {
     console.error('error');
