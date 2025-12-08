@@ -1,3 +1,8 @@
-import { generateBackground, getAvatars, getBackgrounds } from '@/features/avatar/handlers';
+import {
+  generateBackground,
+  getAvatars,
+  getBackgrounds,
+  getSelectedAvatar,
+} from '@/features/avatar/handlers';
 
-export const handlers = [getAvatars, getBackgrounds, generateBackground];
+export const handlers = [getAvatars, getSelectedAvatar, getBackgrounds, generateBackground];

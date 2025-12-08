@@ -1,7 +1,23 @@
 import { axiosClient } from '@/clients/axios-client';
 
 import { BASE_URL } from './constants';
-import { GetBackgroundImagesResponse, GetShallowAvatarsResponse } from './types';
+import {
+  GetAvatarsResponse,
+  GetBackgroundImagesResponse,
+  GetShallowAvatarsResponse,
+} from './types';
+
+const getSelectedAvatar = async (avatarId: string) => {
+  const response = await axiosClient.get(`/${BASE_URL}/${avatarId}`);
+
+  const result = GetAvatarsResponse.safeParse(response.data);
+
+  if (!result.success) {
+    console.error(result.error);
+  }
+
+  return result.data;
+};
 
 const getAvatars = async () => {
   const response = await axiosClient.get(`/${BASE_URL}/list`);
@@ -15,8 +31,8 @@ const getAvatars = async () => {
   return result.data;
 };
 
-const getAvatarBackgrounds = async (id: string) => {
-  const response = await axiosClient.get(`/${BASE_URL}/${id}/backgrounds`);
+const getAvatarBackgrounds = async (avatarId: string) => {
+  const response = await axiosClient.get(`/${BASE_URL}/${avatarId}/backgrounds`);
 
   const result = GetBackgroundImagesResponse.safeParse(response.data);
 
@@ -39,6 +55,7 @@ const generateAvatarBackground = async (body: { avatarId: string; prompt: string
 
 export const AvatarService = {
   getAvatars,
+  getSelectedAvatar,
   getAvatarBackgrounds,
   generateAvatarBackground,
 };

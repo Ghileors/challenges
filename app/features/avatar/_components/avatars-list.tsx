@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 import { useGetAvatars } from '../queries';
 import { AvatarCard } from './avatar-card';
-import { BackgroundsSidebar } from './backgrounds-sidebar';
+import { AvatarPreview } from './avatar-preview';
 
 export function AvatarsList() {
   const { data, isLoading } = useGetAvatars();
@@ -21,20 +21,17 @@ export function AvatarsList() {
   }
 
   return (
-    <div className="flex">
+    <div className="flex gap-x-6">
       <div className="grid max-w-[calc(100%-300px)] grid-cols-4 gap-2">
         {data?.map(({ id, image }) => (
-          <div className="relative">
-            <AvatarCard
-              key={id}
-              image={image}
-            />
-            <BackgroundsSidebar />
-          </div>
+          <AvatarCard
+            key={id}
+            image={image}
+          />
         ))}
       </div>
 
-      <div className="ml-4 h-[500px] w-[281px]"></div>
+      <AvatarPreview />
     </div>
   );
 }

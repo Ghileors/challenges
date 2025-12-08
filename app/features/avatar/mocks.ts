@@ -16,7 +16,7 @@ export const selectedAvatarMock = {
   image: AliceImage,
   name: 'Alice',
   age: 23,
-  gender: 'female',
+  gender: 'FEMALE',
 };
 
 export const backgroundImagesMock = [
