@@ -7,15 +7,17 @@ import {
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
-import ChangeAvatarBackground from '..';
 import { BgIdeaInput } from './background-idea-input';
+import { ChangeAvatarBackgroundButton } from './change-background-button';
 import { GenerateBackgroundButton } from './generate-background-button';
 
 export const BackgroundsSidebar = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <ChangeAvatarBackground />;
+        <div className="flex items-center justify-center gap-4">
+          <ChangeAvatarBackgroundButton />
+        </div>
       </DialogTrigger>
       <DialogContent
         className={cn(
