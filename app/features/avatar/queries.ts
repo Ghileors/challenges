@@ -2,6 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 
 import { AvatarService } from './services';
 
+export const useGetAvatars = () =>
+  useQuery({
+    queryKey: ['getAvatars'],
+    queryFn: () => AvatarService.getAvatars(),
+  });
+
 export const useGetAvatarBackgrounds = (avatarId: string) =>
   useQuery({
     queryKey: ['getAvatarBackgrounds'],

@@ -11,6 +11,14 @@ import TimImage from '@/assets/images/avatars/tim.jpg';
 import BgImage from '@/assets/images/backgrounds/bg-0.jpg';
 import BgImage1 from '@/assets/images/backgrounds/bg-1.jpg';
 
+export const selectedAvatarMock = {
+  id: 'd75e09d0-8a2f-4a32-bec0-29c0f9ea3d6f',
+  image: AliceImage,
+  name: 'Alice',
+  age: 23,
+  gender: 'female',
+};
+
 export const backgroundImagesMock = [
   {
     id: 'image0',

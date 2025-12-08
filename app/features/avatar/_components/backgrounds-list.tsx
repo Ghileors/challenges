@@ -31,4 +31,4 @@ export function BackgroundsList() {
   );
 }
 
-const skeletonMock = Array.from({ length: 10 }, (_, i) => i);
+const skeletonMock = Array.from({ length: 6 }, (_, i) => i);
