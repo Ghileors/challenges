@@ -11,6 +11,7 @@ import {
 
 import type { Route } from './+types/root';
 import './app.css';
+import { Toaster } from './components/ui/sonner';
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Toaster position="top-left" />
         {children}
         <ScrollRestoration />
         <Scripts />

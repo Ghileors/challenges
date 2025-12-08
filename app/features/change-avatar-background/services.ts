@@ -14,6 +14,17 @@ const getAvatarBackgrounds = async (id: string) => {
   return result.data;
 };
 
+const generateAvatarBackground = async (body: { avatarId: string; prompt: string }) => {
+  const response = await axiosClient.post('/backgrounds/generate', body);
+
+  if (response.status !== 200) {
+    console.error('error');
+  }
+
+  return 'Process started';
+};
+
 export const AvatarService = {
   getAvatarBackgrounds,
+  generateAvatarBackground,
 };

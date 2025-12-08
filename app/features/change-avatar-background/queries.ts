@@ -2,8 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 
 import { AvatarService } from './services';
 
-export const useGetAvatarBackgrounds = (id: string) =>
+export const useGetAvatarBackgrounds = (avatarId: string) =>
   useQuery({
     queryKey: ['getAvatarBackgrounds'],
-    queryFn: () => AvatarService.getAvatarBackgrounds(id),
+    queryFn: () => AvatarService.getAvatarBackgrounds(avatarId),
   });

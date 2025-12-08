@@ -1,26 +1,34 @@
-import React from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 import { useGetAvatarBackgrounds } from '../queries';
 import { AvatarCard } from './avatar-card';
 
-export const BackgroundsList = () => {
-  const { data } = useGetAvatarBackgrounds('1');
+export function BackgroundsList() {
+  const { data, isLoading } = useGetAvatarBackgrounds('1');
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-3 gap-3">
+        {skeletonMock.map((item) => (
+          <Skeleton
+            key={`${item}`}
+            className="h-[198px] w-[112px] rounded-2xl bg-neutral-400"
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <div className="space-y-2.5">
-      <p className="font-[Italian_Plate_No2_Expanded] text-[14px] leading-[120%] font-semibold tracking-[0px]">
-        Your backgrounds
-      </p>
-      <div className="grid grid-cols-3 gap-3">
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />
-        <AvatarCard />{' '}
-      </div>
+    <div className="grid grid-cols-3 gap-3">
+      {data?.map(({ id, image }) => (
+        <AvatarCard
+          key={id}
+          image={image}
+        />
+      ))}
     </div>
   );
-};
+}
+
+const skeletonMock = Array.from({ length: 10 }, (_, i) => i);
