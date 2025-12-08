@@ -1,3 +1,4 @@
+import AliceAvatarImage from '@/assets/images/avatars/alice-avatar.png';
 import AliceImage from '@/assets/images/avatars/alice.jpg';
 import AmberImage from '@/assets/images/avatars/amber.jpg';
 import CatherineImage from '@/assets/images/avatars/catherine.jpg';
@@ -16,7 +17,7 @@ import BgImage4 from '@/assets/images/backgrounds/bg-4.jpg';
 
 export const selectedAvatarMock = {
   id: 'd75e09d0-8a2f-4a32-bec0-29c0f9ea3d6f',
-  image: AliceImage,
+  image: AliceAvatarImage,
   name: 'Alice',
   age: 23,
   gender: 'FEMALE',

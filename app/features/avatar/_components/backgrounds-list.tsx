@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import { useSearchParams } from 'react-router';
 
-import { useGetAvatarBackgrounds } from '../queries';
+import { useGetAvatarBackgrounds, useGetSelectedAvatar } from '../queries';
 
 export function BackgroundsList() {
   const [searchParams] = useSearchParams();
@@ -11,9 +11,11 @@ export function BackgroundsList() {
     return null;
   }
 
+  const { data: avatarData, isLoading: isAvatarLoading } = useGetSelectedAvatar(id);
+
   const { data, isLoading } = useGetAvatarBackgrounds(id);
 
-  if (isLoading) {
+  if (isLoading || isAvatarLoading) {
     return (
       <div className="grid grid-cols-3 gap-3">
         {skeletonMock.map((item) => (
@@ -25,7 +27,6 @@ export function BackgroundsList() {
       </div>
     );
   }
-
   return (
     <div className="grid grid-cols-3 gap-3">
       {data?.map(({ id, image }) => (
@@ -33,7 +34,14 @@ export function BackgroundsList() {
           key={id}
           className="h-[198px] w-[112px] rounded-2xl bg-cover bg-center"
           style={{ backgroundImage: `url(${image})` }}
-        />
+        >
+          {avatarData && (
+            <div
+              className="h-full w-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${avatarData.image})` }}
+            />
+          )}
+        </div>
       ))}
     </div>
   );

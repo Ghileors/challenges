@@ -4,7 +4,7 @@ import { AvatarService } from './services';
 
 export const useGetSelectedAvatar = (avatarId: string) =>
   useQuery({
-    queryKey: ['getSelectedAvatar'],
+    queryKey: ['getSelectedAvatar', avatarId],
     queryFn: () => AvatarService.getSelectedAvatar(avatarId),
   });
 

@@ -1,3 +1,4 @@
+import BgImage from '@/assets/images/backgrounds/bg-0.jpg';
 import PlayerImage from '@/assets/images/player.png';
 import ProgressBarImage from '@/assets/images/progress-bar.png';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -23,7 +24,7 @@ export const AvatarPreview = ({ id }: { id: string | null }) => {
   return (
     <div
       className="flex h-[500px] w-[281px] flex-col items-center justify-between rounded-2xl bg-cover bg-center pt-2 pb-3"
-      style={{ backgroundImage: `url(${data.image})` }}
+      style={{ backgroundImage: `url(${BgImage})` }}
     >
       <BackgroundsSidebar />
 
