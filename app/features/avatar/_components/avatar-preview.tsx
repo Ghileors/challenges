@@ -5,8 +5,12 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useGetSelectedAvatar } from '../queries';
 import { BackgroundsSidebar } from './backgrounds-sidebar';
 
-export const AvatarPreview = () => {
-  const { data, isLoading } = useGetSelectedAvatar('1');
+export const AvatarPreview = ({ id }: { id: string | null }) => {
+  if (!id) {
+    return null;
+  }
+
+  const { data, isLoading } = useGetSelectedAvatar(id);
 
   if (isLoading) {
     return <Skeleton className="h-[500px] w-[281px] rounded-2xl bg-neutral-400" />;
