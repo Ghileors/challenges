@@ -2,7 +2,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useSearchParams } from 'react-router';
 
 import { useGetAvatarBackgrounds } from '../queries';
-import { AvatarCard } from './avatar-card';
 
 export function BackgroundsList() {
   const [searchParams] = useSearchParams();
@@ -30,9 +29,10 @@ export function BackgroundsList() {
   return (
     <div className="grid grid-cols-3 gap-3">
       {data?.map(({ id, image }) => (
-        <AvatarCard
+        <div
           key={id}
-          image={image}
+          className="h-[198px] w-[112px] rounded-2xl bg-cover bg-center"
+          style={{ backgroundImage: `url(${image})` }}
         />
       ))}
     </div>

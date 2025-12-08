@@ -10,6 +10,9 @@ import SylvesterImage from '@/assets/images/avatars/sylvester.jpg';
 import TimImage from '@/assets/images/avatars/tim.jpg';
 import BgImage from '@/assets/images/backgrounds/bg-0.jpg';
 import BgImage1 from '@/assets/images/backgrounds/bg-1.jpg';
+import BgImage2 from '@/assets/images/backgrounds/bg-2.jpg';
+import BgImage3 from '@/assets/images/backgrounds/bg-3.jpg';
+import BgImage4 from '@/assets/images/backgrounds/bg-4.jpg';
 
 export const selectedAvatarMock = {
   id: 'd75e09d0-8a2f-4a32-bec0-29c0f9ea3d6f',
@@ -21,12 +24,24 @@ export const selectedAvatarMock = {
 
 export const backgroundImagesMock = [
   {
-    id: 'image0',
+    id: '0f3b9e1e-8c92-4bfa-9e2e-2f6dfb71f4a1',
     image: BgImage,
   },
   {
-    id: 'image1',
+    id: 'c7d1c4e0-b8c6-4c71-bc16-0c4a5c2d9d87',
     image: BgImage1,
+  },
+  {
+    id: '5e0a4a3f-2bb0-4c60-af6d-1e9689b5b3c9',
+    image: BgImage2,
+  },
+  {
+    id: '8d3e4fb6-1a87-4f5c-bb6f-92d43b4f4192',
+    image: BgImage3,
+  },
+  {
+    id: 'b4c2a1e8-5e93-42f1-8ef1-ccf0f2b9a827',
+    image: BgImage4,
   },
 ];
 
