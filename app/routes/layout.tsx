@@ -14,7 +14,7 @@ export default function Layout() {
         <ArrowIcon /> <div>Header</div>
         <CloseIcon />
       </nav>
-      <main className="h-full w-full bg-gray-500">
+      <main className="h-full w-full bg-gray-500 pt-16">
         <Outlet />
       </main>
     </>

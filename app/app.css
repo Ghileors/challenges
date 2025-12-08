@@ -13,6 +13,7 @@ body {
   @apply bg-white dark:bg-gray-950;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   font-family: var(--font-plate);
 
   @media (prefers-color-scheme: dark) {

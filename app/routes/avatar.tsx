@@ -1,5 +1,5 @@
-import ChangeAvatarBackground from '@/features/change-avatar-background';
+import { BackgroundsSidebar } from '@/features/change-avatar-background/_components/backgrounds-sidebar';
 
 export default function Avatar() {
-  return <ChangeAvatarBackground />;
+  return <BackgroundsSidebar />;
 }
