@@ -1,3 +1,3 @@
-import { getBackgrounds } from '@/features/change-avatar-background/handlers';
+import { generateBackground, getBackgrounds } from '@/features/change-avatar-background/handlers';
 
-export const handlers = [getBackgrounds];
+export const handlers = [getBackgrounds, generateBackground];
