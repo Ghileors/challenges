@@ -3,11 +3,15 @@ import ActionNextIcon from '@/assets/icons/action_next.svg?react';
 import RegenerateSparkleIcon from '@/assets/icons/regenerate-sparkle.svg?react';
 import { Textarea } from '@/components/ui/textarea';
 
-export const BgIdeaInput = () => {
+export const BgIdeaInput = ({ value, onChange }: React.ComponentProps<'textarea'>) => {
   return (
     <div className="relative">
       <div className="rounded-[12px] border border-[#070a0e]">
-        <Textarea className="h-[116px] w-[360px] resize-none border-none pt-4 shadow-none focus-visible:border-none focus-visible:ring-0" />
+        <Textarea
+          value={value}
+          onChange={onChange}
+          className="h-[116px] w-[360px] resize-none border-none pt-4 shadow-none focus-visible:border-none focus-visible:ring-0"
+        />
 
         {/* TODO: change divs to buttons */}
         <div className="flex w-full justify-between px-6 py-5">

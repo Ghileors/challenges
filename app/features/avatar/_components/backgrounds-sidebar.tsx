@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { useQueryClient } from '@tanstack/react-query';
+import { useState } from 'react';
+import { useSearchParams } from 'react-router';
 import { toast } from 'sonner';
 
 import { useGenerateAvatarBackground } from '../mutations';
@@ -19,6 +21,10 @@ import { BackgroundsList } from './backgrounds-list';
 
 export const BackgroundsSidebar = () => {
   const queryClient = useQueryClient();
+  const [searchParams] = useSearchParams();
+  const [prompt, setPrompt] = useState('');
+
+  const id = searchParams.get('id');
 
   const { mutate: generateAvatarBackground, isPending } = useGenerateAvatarBackground();
 
@@ -54,11 +60,14 @@ export const BackgroundsSidebar = () => {
             <p className="font-[Italian_Plate_No2_Expanded] text-[14px] leading-[120%] font-semibold tracking-[0px]">
               Background idea
             </p>
-            <BgIdeaInput />
+            <BgIdeaInput
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+            />
           </div>
           <Button
             disabled={isPending}
-            onClick={() => onSubmitPrompt('1', '')}
+            onClick={() => onSubmitPrompt(prompt, id)}
             className="h-[48px] w-[360px] rotate-0 gap-[8px] rounded-full px-[28px] opacity-100"
           >
             <SparkleIcon />
@@ -76,7 +85,7 @@ export const BackgroundsSidebar = () => {
     </Dialog>
   );
 
-  function onSubmitPrompt(avatarId: string, prompt: string) {
+  function onSubmitPrompt(prompt: string, avatarId: string | null) {
     if (!avatarId) return;
 
     generateAvatarBackground(
@@ -87,6 +96,7 @@ export const BackgroundsSidebar = () => {
       {
         onSuccess: () => {
           queryClient.invalidateQueries({ queryKey: ['getAvatarBackgrounds', avatarId] });
+          setPrompt('');
         },
         onError: (error) => {
           console.log(error);
