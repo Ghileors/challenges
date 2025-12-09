@@ -1,14 +1,11 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './assets//fonts/fonts.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans:
-    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-
-  --font-manrope: 'Manrope', sans-serif;
+  --font-plate: 'Italian Plate No2 Expanded', sans-serif;
 }
 
 html,
@@ -16,7 +13,8 @@ body {
   @apply bg-white dark:bg-gray-950;
   width: 100vw;
   height: 100vh;
-  font-family: var(--font-manrope);
+  overflow: hidden;
+  font-family: var(--font-plate);
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -141,5 +139,30 @@ body {
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsla(208, 22%, 60%, 1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsla(208, 22%, 50%, 1);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsla(208, 22%, 60%, 1) transparent;
   }
 }
