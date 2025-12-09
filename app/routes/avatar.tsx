@@ -1,5 +1,9 @@
 import { AvatarsList } from '@/features/avatar/_components/avatars-list';
 
+export function meta() {
+  return [{ title: 'Avatar' }, { name: 'description', content: 'Create your avatar!' }];
+}
+
 export default function Avatar() {
   return (
     <div className="mt-11 mr-auto ml-auto w-fit">
