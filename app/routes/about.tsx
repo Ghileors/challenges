@@ -1,3 +1,13 @@
+import { ProjectDescription } from '@/features/avatar/about/_components/project-description';
+
+export function meta() {
+  return [{ title: 'About' }, { name: 'description', content: 'Project Description!' }];
+}
+
 export default function About() {
-  return <div>about</div>;
+  return (
+    <div className="h-full overflow-y-scroll p-5">
+      <ProjectDescription />
+    </div>
+  );
 }
