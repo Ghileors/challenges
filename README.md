@@ -1,87 +1,96 @@
-# Welcome to React Router!
+# **Avatar Background Generator — React Router + MSW + TanStack Query**
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Проєкт створений як демонстрація роботи з **React Router**, **MSW**, **TanStack Query** та **TailwindCSS/Shadcn UI**.  
+Основна мета — відтворити флоу вибору аватара та генерації фону з мінімальним білдом і зрозумілою архітектурою.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+---
 
-## Features
+## 🏗 **Технологічний стек**
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+### **Основні інструменти**
 
-## Getting Started
+- **React Router DOM** — маршрутизація та архітектура додатку
+- **MSW (Mock Service Worker)** — емуляція бекенду та запитів
+- **TanStack Query** — менеджмент серверного стану
+- **TailwindCSS** — стилізація
+- **shadcn/ui** — компонентна бібліотека для інтерфейсу
 
-### Installation
+---
 
-Install the dependencies:
+## 🚦 **Ключові можливості**
+
+### 🔗 **Маршрутизація**
+
+Проєкт побудований на базі **React Router**, тому:
+
+- при перемиканні аватарів змінюється **URL**,
+- кожен аватар відображається як окремий маршрут,
+- усі переходи відпрацьовують без перезавантаження сторінки.
+
+Це дозволяє побачити, як виглядатиме реальний продакшн-флоу з глибокими посиланнями.
+
+---
+
+### 🔧 **MSW — емуляція API**
+
+Проєкт використовує **Mock Service Worker**, тому у вкладці **Network** браузера можна побачити:
+
+- відправку запитів
+- отримання відповідей
+- зміну статусів запитів
+
+> **Усі відповіді — замокані.**  
+> Незалежно від того, що передається в тілі запиту, сервер **повертає одні й ті самі дані**.  
+> Це очікувана поведінка в контексті технічного завдання.
+
+---
+
+### 🔄 **TanStack Query — менеджмент серверного стану**
+
+Запити до API обгорнуті в TanStack Query, що дає:
+
+- кешування
+- автоматичний рефетч
+- контроль статусів (loading / success / error)
+
+Оскільки API замокане, _обраний аватар не змінюється_ — MSW завжди повертає один набір даних.
+
+---
+
+### 🧩 **Стан додатку**
+
+У проєкті **не використовуються Zustand або інші внутрішні state-managers**, тому що:
+
+- у поточному флоу весь стан — або локальний, або серверний;
+- складних залежностей чи глобального стану немає;
+- TanStack Query повністю покриває вимоги до серверного стану.
+
+---
+
+### 🎨 **UI та стилі**
+
+- Використано **TailwindCSS** для стилізації
+- Компоненти побудовані на **shadcn/ui**  
+  Це забезпечує консистентний вигляд та швидку розробку інтерфейсу.
+
+---
+
+## ▶️ **Запуск проєкту**
+
+Встановити залежності:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+Запустити у Dev-режимі:
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+Після запуску сторінка буде доступна за адресою:
 
 ```bash
-npm run build
+http://localhost:5173/
 ```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
