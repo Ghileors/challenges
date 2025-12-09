@@ -1,16 +1,18 @@
 import { axiosClient } from '@/clients/axios-client';
+import { toast } from 'sonner';
 
 import { BASE_URL } from './constants';
 import {
-  GetAvatarsResponse,
-  GetBackgroundImagesResponse,
-  GetShallowAvatarsResponse,
+  AvatarItemSchema,
+  GenerateAvatarRequestSchema,
+  GetBackgroundImagesResponseSchema,
+  GetShallowAvatarsResponseSchema,
 } from './types';
 
 const getSelectedAvatar = async (avatarId: string) => {
   const response = await axiosClient.get(`/${BASE_URL}/${avatarId}`);
 
-  const result = GetAvatarsResponse.safeParse(response.data);
+  const result = AvatarItemSchema.safeParse(response.data);
 
   if (!result.success) {
     console.error(result.error);
@@ -22,7 +24,7 @@ const getSelectedAvatar = async (avatarId: string) => {
 const getAvatars = async () => {
   const response = await axiosClient.get(`/${BASE_URL}/list`);
 
-  const result = GetShallowAvatarsResponse.safeParse(response.data);
+  const result = GetShallowAvatarsResponseSchema.safeParse(response.data);
 
   if (!result.success) {
     console.error(result.error);
@@ -34,7 +36,7 @@ const getAvatars = async () => {
 const getAvatarBackgrounds = async (avatarId: string) => {
   const response = await axiosClient.get(`/${BASE_URL}/backgrounds/${avatarId}`);
 
-  const result = GetBackgroundImagesResponse.safeParse(response.data);
+  const result = GetBackgroundImagesResponseSchema.safeParse(response.data);
 
   if (!result.success) {
     console.error(result.error);
@@ -44,6 +46,14 @@ const getAvatarBackgrounds = async (avatarId: string) => {
 };
 
 const generateAvatarBackground = async (body: { avatarId: string; prompt: string }) => {
+  const result = GenerateAvatarRequestSchema.safeParse(body);
+
+  if (!result.success) {
+    const errorMessage = JSON.parse(result.error.message)[0].message;
+
+    toast.error(`wrong request parameters: ${errorMessage}`);
+  }
+
   const response = await axiosClient.post(`/${BASE_URL}/background`, body);
 
   if (response.status !== 200) {
