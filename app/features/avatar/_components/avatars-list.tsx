@@ -30,7 +30,7 @@ export function AvatarsList() {
         {data?.map(({ id, image, name }) => (
           <div
             key={id}
-            className="group relative h-[198px] w-[112px] rounded-2xl bg-cover bg-center"
+            className="group relative h-[198px] w-[112px] cursor-pointer rounded-2xl bg-cover bg-center"
             style={{ backgroundImage: `url(${image})` }}
             onClick={() => onSelectAvatar(id)}
           >

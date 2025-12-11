@@ -27,6 +27,7 @@ export function BackgroundsList() {
       </div>
     );
   }
+
   return (
     <div className="grid grid-cols-3 gap-3">
       {data?.map(({ id, image }) => (
