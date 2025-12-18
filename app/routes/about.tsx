@@ -1,4 +1,4 @@
-import { ProjectDescription } from '@/features/avatar/about/_components/project-description';
+import { ProjectDescription } from '@/features/about/_components/project-description';
 
 export function meta() {
   return [{ title: 'About' }, { name: 'description', content: 'Project Description!' }];
