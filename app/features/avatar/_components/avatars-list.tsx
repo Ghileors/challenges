@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import { useSearchParams } from 'react-router';
 
-import { useGetAvatars } from '../queries';
+import { useGetAvatars } from '../_lib/queries';
 import { AvatarPreview } from './avatar-preview';
 
 export function AvatarsList() {
