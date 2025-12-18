@@ -15,15 +15,22 @@ import BgImage2 from '@/assets/images/backgrounds/bg-2.jpg';
 import BgImage3 from '@/assets/images/backgrounds/bg-3.jpg';
 import BgImage4 from '@/assets/images/backgrounds/bg-4.jpg';
 
-export const selectedAvatarMock = {
+import type {
+  GetAvatarResponse,
+  GetAvatarsListResponse,
+  GetBackgroundImagesResponse,
+} from './types';
+
+export const selectedAvatarMock: GetAvatarResponse = {
   id: 'd75e09d0-8a2f-4a32-bec0-29c0f9ea3d6f',
   image: AliceAvatarImage,
   name: 'Alice',
-  age: 23,
-  gender: 'FEMALE',
+  age: 'young',
+  gender: 'female',
+  pose: 'stand',
 };
 
-export const backgroundImagesMock = [
+export const backgroundImagesMock: GetBackgroundImagesResponse = [
   {
     id: '0f3b9e1e-8c92-4bfa-9e2e-2f6dfb71f4a1',
     image: BgImage,
@@ -46,55 +53,85 @@ export const backgroundImagesMock = [
   },
 ];
 
-export const avatarsMock = [
+export const avatarsMock: GetAvatarsListResponse = [
   {
     id: 'd75e09d0-8a2f-4a32-bec0-29c0f9ea3d6f',
     image: AliceImage,
     name: 'Alice',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: 'ec87cf4e-8a4e-4df2-a4a7-7e1aa2f28513',
     image: AmberImage,
     name: 'Amber',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '2de618dc-bb0d-45c1-a7b8-d401e2d2e565',
     image: CatherineImage,
     name: 'Catherine',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '77e0b1f6-ef2d-4f25-91b5-0bb3150dffb1',
     image: EvelynImage,
     name: 'Evelyn',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '9a3a764f-4c36-42ac-8f46-c1c8eacaf44c',
     image: GabrielleImage,
     name: 'Gabrielle',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '39db2c2c-4081-46e3-8582-5939c2b2cc8c',
     image: JenniferImage,
     name: 'Jennifer',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '16472c3e-94a3-4990-b358-16c4cbb01bd1',
     image: LaurenImage,
     name: 'Lauren',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: 'f902bfa1-1501-4e76-a45f-daa0612e1822',
     image: SamanthaImage,
     name: 'Samantha',
+    age: 'young',
+    gender: 'female',
+    pose: 'stand',
   },
   {
     id: '3b7e5d8e-b693-4041-a6b1-d83737c8db26',
     image: SylvesterImage,
     name: 'Sylvester',
+    age: 'young',
+    gender: 'male',
+    pose: 'stand',
   },
   {
     id: '8d0c1c34-8801-4cc6-b5b0-0e05a9c2f118',
     image: TimImage,
     name: 'Tim',
+    age: 'young',
+    gender: 'male',
+    pose: 'stand',
   },
 ];

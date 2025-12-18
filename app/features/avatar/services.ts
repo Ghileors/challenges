@@ -5,8 +5,10 @@ import { BASE_URL } from './constants';
 import {
   AvatarItemSchema,
   GenerateAvatarRequestSchema,
+  type GetAvatarsListRequestParams,
+  type GetAvatarsListResponse,
+  GetAvatarsListResponseSchema,
   GetBackgroundImagesResponseSchema,
-  GetShallowAvatarsResponseSchema,
 } from './types';
 
 const getSelectedAvatar = async (avatarId: string) => {
@@ -21,13 +23,22 @@ const getSelectedAvatar = async (avatarId: string) => {
   return result.data;
 };
 
-const getAvatars = async () => {
-  const response = await axiosClient.get(`/${BASE_URL}/list`);
+const getAvatars = async (
+  params?: GetAvatarsListRequestParams
+): Promise<GetAvatarsListResponse> => {
+  const paramsValidation = GenerateAvatarRequestSchema.safeParse(params);
 
-  const result = GetShallowAvatarsResponseSchema.safeParse(response.data);
+  if (params && !paramsValidation.success) {
+    const errorMessage = paramsValidation.error.issues[0].message;
+    throw new Error(errorMessage);
+  }
+
+  const response = await axiosClient.get(`/${BASE_URL}/list`, { params });
+
+  const result = GetAvatarsListResponseSchema.safeParse(response.data);
 
   if (!result.success) {
-    console.error(result.error);
+    throw new Error('Invalid response from server');
   }
 
   return result.data;

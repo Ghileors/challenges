@@ -2,11 +2,15 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useSearchParams } from 'react-router';
 
 import { useGetAvatars } from '../queries';
+import type { GetAvatarsListRequestParams } from '../types';
 import { AvatarPreview } from './avatar-preview';
 
 export function AvatarsList() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { data, isLoading } = useGetAvatars();
+
+  const query = Object.fromEntries(searchParams.entries()) as GetAvatarsListRequestParams;
+
+  const { data, isLoading } = useGetAvatars(query);
 
   const id = searchParams.get('id');
 
