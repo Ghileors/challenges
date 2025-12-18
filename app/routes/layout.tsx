@@ -7,23 +7,16 @@ export function meta() {
   return [{ title: 'Challenges' }, { name: 'description', content: 'Welcome to App!' }];
 }
 
-export default function CreateAvatar() {
+export default function Layout() {
   return (
     <>
       <nav className="absolute top-0 flex h-16 w-screen items-center justify-between border-b border-[hsla(210,18%,96%,1)] px-12">
         {/* TODO: add condition rendering for icons */}
         <ArrowIcon />
         <div className="flex gap-1.5">
-          <StyledLink to="avatar">
-            <p className="align-bottom font-[Italian_Plate_No2_Expanded] text-[12px] leading-[100%] font-semibold tracking-[0] text-[hsla(208,6%,59%,1)] first-letter:uppercase">
-              Avatar
-            </p>
-          </StyledLink>
-          <StyledLink to="/">
-            <p className="align-bottom font-[Italian_Plate_No2_Expanded] text-[12px] leading-[100%] font-semibold tracking-[0] text-[hsla(208,6%,59%,1)] first-letter:uppercase">
-              About
-            </p>
-          </StyledLink>
+          <StyledLink to="/">About</StyledLink>
+          <StyledLink to="avatar">Avatar</StyledLink>
+          <StyledLink to="apartments">Apartments</StyledLink>
         </div>
 
         <CloseIcon />
@@ -45,7 +38,9 @@ function StyledLink({ to, children }: LinkProps) {
         'cursor-pointer focus:border-[hsla(208,22%,83%,1)] focus:text-black'
       )}
     >
-      {children}
+      <p className="align-bottom font-[Italian_Plate_No2_Expanded] text-[12px] leading-[100%] font-semibold tracking-[0] text-[hsla(208,6%,59%,1)] first-letter:uppercase">
+        {children}
+      </p>
     </Link>
   );
 }

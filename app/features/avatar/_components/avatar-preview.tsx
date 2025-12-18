@@ -3,7 +3,7 @@ import PlayerImage from '@/assets/images/player.png';
 import ProgressBarImage from '@/assets/images/progress-bar.png';
 import { Skeleton } from '@/components/ui/skeleton';
 
-import { useGetSelectedAvatar } from '../queries';
+import { useGetSelectedAvatar } from '../_lib/queries';
 import { BackgroundsSidebar } from './backgrounds-sidebar';
 
 export const AvatarPreview = ({ id }: { id: string | null }) => {

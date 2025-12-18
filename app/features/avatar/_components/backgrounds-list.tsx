@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import { useSearchParams } from 'react-router';
 
-import { useGetAvatarBackgrounds, useGetSelectedAvatar } from '../queries';
+import { useGetAvatarBackgrounds, useGetSelectedAvatar } from '../_lib/queries';
 
 export function BackgroundsList() {
   const [searchParams] = useSearchParams();

@@ -15,7 +15,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { toast } from 'sonner';
 
-import { useGenerateAvatarBackground } from '../mutations';
+import { useGenerateAvatarBackground } from '../_lib/mutations';
 import { BgIdeaInput } from './background-idea-input';
 import { BackgroundsList } from './backgrounds-list';
 
