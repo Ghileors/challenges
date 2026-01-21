@@ -1,4 +1,4 @@
-import type { Booking } from './types';
+import type { ApartmentsList, Booking } from './types';
 
 export const mockBookings: Array<Booking> = [
   {
@@ -30,5 +30,68 @@ export const mockBookings: Array<Booking> = [
     checkOut: '2025-06-20',
     guests: 4,
     totalPrice: 1280,
+  },
+];
+
+export const mockedApartments: ApartmentsList = [
+  {
+    id: 'apt-001',
+    title: 'Cozy City Center Apartment',
+    description: 'A cozy apartment located in the heart of the city.',
+    location: {
+      city: 'Berlin',
+      country: 'Germany',
+    },
+    image: 'https://picsum.photos/400/300?1',
+    pricePerNight: 120,
+    currency: 'EUR',
+  },
+  {
+    id: 'apt-002',
+    title: 'Modern Studio Near Park',
+    description: 'Modern studio apartment with a beautiful park view.',
+    location: {
+      city: 'Amsterdam',
+      country: 'Netherlands',
+    },
+    image: 'https://picsum.photos/400/300?2',
+    pricePerNight: 95,
+    currency: 'EUR',
+  },
+  {
+    id: 'apt-003',
+    title: 'Spacious Family Apartment',
+    description: 'Perfect for families, spacious and fully equipped.',
+    location: {
+      city: 'Barcelona',
+      country: 'Spain',
+    },
+    image: 'https://picsum.photos/400/300?3',
+    pricePerNight: 150,
+    currency: 'EUR',
+  },
+  {
+    id: 'apt-004',
+    title: 'Charming Old Town Flat',
+    description: 'Charming flat located in the historical old town.',
+    location: {
+      city: 'Prague',
+      country: 'Czech Republic',
+    },
+    image: 'https://picsum.photos/400/300?4',
+    pricePerNight: 110,
+    currency: 'EUR',
+  },
+  {
+    id: 'apt-005',
+    title: 'Luxury Apartment with Sea View',
+    description: 'Luxury apartment offering an amazing sea view.',
+    location: {
+      city: 'Nice',
+      country: 'France',
+    },
+    image: 'https://picsum.photos/400/300?5',
+    pricePerNight: 220,
+    currency: 'EUR',
   },
 ];
