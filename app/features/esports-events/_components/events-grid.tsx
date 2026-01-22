@@ -1,16 +1,15 @@
-import { useGetUpcomingEvents } from '../_lib/queries';
+import type { EventCard } from '../_lib/types';
 import { EventCardView } from './event-card';
+import { EventCardSkeleton } from './event-card-skeleton';
 
-export function EventsGrid() {
-  const { data: items, isLoading } = useGetUpcomingEvents();
+type Props = {
+  events: EventCard[];
+};
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
+export function EventsGrid({ events }: Props) {
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {items?.map((item) => (
+      {events.map((item) => (
         <EventCardView
           key={item.id}
           item={item}

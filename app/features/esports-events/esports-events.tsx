@@ -1,9 +1,9 @@
-import { EventsGrid } from './_components/events-grid';
+import UpcomingEvents from './upcoming/upcoming-events';
 
 export default function ESportEvents() {
   return (
     <div>
-      <EventsGrid />
+      <UpcomingEvents />
     </div>
   );
 }
