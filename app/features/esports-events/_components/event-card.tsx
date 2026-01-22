@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+import ViewMoreDetails from '../_atoms/view-more-details';
 import type { EventCard } from '../_lib/types';
 import { formatDateRange } from '../_lib/utils';
 
@@ -64,16 +64,7 @@ export function EventCardView({ item }: Props) {
         <div className="mt-auto flex items-center justify-between">
           <span className="text-[14px] font-medium text-white/75">{dateLabel}</span>
 
-          <Button
-            variant="secondary"
-            className={cn(
-              'h-10 rounded-none px-5 font-extrabold tracking-[0.06em] text-black',
-              'bg-white',
-              'hover:bg-lime-400/90'
-            )}
-          >
-            VIEW MORE DETAILS <span className="ml-2 text-[18px]">›</span>
-          </Button>
+          <ViewMoreDetails />
         </div>
       </div>
     </article>

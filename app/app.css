@@ -1,3 +1,5 @@
+@import url('https://p.typekit.net/p.css?s=1&k=qxg8mry&ht=tk&f=45485.45491.45486.45488.45490.45492&a=28936858&app=typekit&e=css');
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import './assets/fonts/fonts.css';
@@ -6,6 +8,8 @@
 
 @theme {
   --font-plate: 'Italian Plate No2 Expanded', sans-serif;
+  --font-sporty-pro: 'sporty-pro', sans-serif;
+  --font-sporty-pro-inline: 'sporty-pro-inline', sans-serif;
 }
 
 html,
