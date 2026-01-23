@@ -16,13 +16,7 @@ export function EventCardSkeleton() {
           <div className="h-8 w-20 bg-white/10" />
         </div>
 
-        <div className="mt-4 h-px bg-white/10" />
-
-        <div className="mt-4 h-4 w-2/3 bg-white/15" />
-
-        <div className="mt-4 h-px bg-white/10" />
-
-        <div className="mt-auto flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className="h-4 w-32 bg-white/15" />
           <div className="h-10 w-40 bg-white/20" />
         </div>

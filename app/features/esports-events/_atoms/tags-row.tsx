@@ -7,7 +7,7 @@ type Props = {
 
 export default function TagsRow({ tags }: Props) {
   return (
-    <div className="mt-4 flex gap-0.5">
+    <div className="flex gap-0.5">
       {tags.map((tag) => (
         <EventTag
           key={tag}

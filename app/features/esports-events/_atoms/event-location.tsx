@@ -6,7 +6,7 @@ type Props = {
 
 export default function EventLocation({ location }: Props) {
   return (
-    <div className="mt-2 flex items-center gap-1.5">
+    <div className="flex items-center gap-1.5">
       <LocationPinIcon
         width={20}
         height={20}

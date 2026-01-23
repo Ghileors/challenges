@@ -2,24 +2,25 @@ import { cn } from '@/lib/utils';
 
 import CategoriesRow from '../_atoms/categories-row';
 import EventLocation from '../_atoms/event-location';
+import { Separator } from '../_atoms/separator';
 import TagsRow from '../_atoms/tags-row';
 import ViewMoreDetails from '../_atoms/view-more-details';
 import type { EventCard } from '../_lib/types';
 import { formatDateRange } from '../_lib/utils';
 
 type Props = {
-  item: EventCard;
+  event: EventCard;
 };
 
-export function EventCardView({ item }: Props) {
-  const dateLabel = formatDateRange(item.dates.startDate, item.dates.endDate);
+export function EventCardView({ event }: Props) {
+  const dateLabel = formatDateRange(event.dates.startDate, event.dates.endDate);
 
   return (
     <article
       className={cn(
         'group',
         'relative overflow-hidden',
-        'h-[260px] w-full',
+        'h-[290px] w-full',
         'bg-[#1f262c] text-white',
         'shadow-[0_0_0_1px_rgba(255,255,255,0.04)]',
         'hover:bg-[#2a2236]'
@@ -35,28 +36,31 @@ export function EventCardView({ item }: Props) {
 
       <div className="absolute top-0 left-0 h-28 w-36 opacity-40 [background:repeating-linear-gradient(135deg,rgba(255,255,255,0.18)_0,rgba(255,255,255,0.18)_8px,transparent_8px,transparent_16px)]" />
 
-      <div className="relative flex h-full flex-col px-6 pt-4 pb-5">
+      <div className="relative flex h-full flex-col px-5 pt-[46px] pb-5">
         <h3
           className={cn(
-            'font-sporty-pro mt-2 text-lg leading-[1.05] font-medium tracking-[0.02em] uppercase',
             'max-w-80',
-            'wrap-break-words'
+            'font-sporty-pro wrap-break-words text-lg leading-none font-medium tracking-[0] uppercase'
           )}
         >
-          {item.title}
+          {event.title}
         </h3>
 
-        <EventLocation location={item.location} />
+        <div className="mt-2 mb-[18px]">
+          <EventLocation location={event.location} />
+        </div>
 
-        <TagsRow tags={item.tags} />
+        <TagsRow tags={event.tags} />
 
-        <div className="mt-4 h-px bg-white/10" />
+        <div className="my-5">
+          <Separator />
+          <div className="py-4">
+            <CategoriesRow categories={event.categories} />
+          </div>
+          <Separator />
+        </div>
 
-        <CategoriesRow categories={item.categories} />
-
-        <div className="mt-4 h-px bg-white/10" />
-
-        <div className="mt-auto flex items-center justify-between">
+        <div className="events-center flex justify-between">
           <p className="font-rajdhani text-xl leading-none font-semibold tracking-[0] text-[#E5E9EC]">
             {dateLabel}
           </p>
