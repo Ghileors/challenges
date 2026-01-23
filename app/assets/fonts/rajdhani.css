@@ -1,0 +1,51 @@
+/* Rajdhani — Google Fonts */
+
+/* 300 — Light */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('https://fonts.gstatic.com/s/rajdhani/v15/LDI1apCSOBg7S-QT7pasEcOs.woff2')
+    format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 400 — Regular */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('https://fonts.gstatic.com/s/rajdhani/v15/LDI2apCSOBg7S-QT7pbYF8Os.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 500 — Medium */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('https://fonts.gstatic.com/s/rajdhani/v15/LDI1apCSOBg7S-QT7pb0EMOs.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 600 — SemiBold */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('https://fonts.gstatic.com/s/rajdhani/v15/LDI1apCSOBg7S-QT7pbmF8Os.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 700 — Bold */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('https://fonts.gstatic.com/s/rajdhani/v15/LDI1apCSOBg7S-QT7pa8FcOs.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
