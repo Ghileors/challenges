@@ -1,8 +1,3 @@
-import {
-  generateBackground,
-  getAvatars,
-  getBackgrounds,
-  getSelectedAvatar,
-} from '@/features/avatar/handlers';
+import { getUpcomingEvents } from '@/features/esports-events/_lib/handlers';
 
-export const handlers = [getAvatars, getSelectedAvatar, getBackgrounds, generateBackground];
+export const handlers = [getUpcomingEvents];
