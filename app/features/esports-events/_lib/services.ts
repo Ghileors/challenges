@@ -11,7 +11,7 @@ const getUpcomingEvents = async () => {
   const result = eventCardsSchema.safeParse(response.data);
 
   if (!result.success) {
-    console.error(result.error);
+    // console.error(result.error);
     return eventCardsMock;
   }
 
