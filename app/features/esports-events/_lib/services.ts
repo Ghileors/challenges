@@ -1,5 +1,6 @@
 import { axiosClient } from '@/clients/axios-client';
 
+import { eventCardsMock } from './mocks';
 import { eventCardsSchema } from './types';
 
 const BASE_URL = 'events';
@@ -11,6 +12,7 @@ const getUpcomingEvents = async () => {
 
   if (!result.success) {
     console.error(result.error);
+    return eventCardsMock;
   }
 
   return result.data;

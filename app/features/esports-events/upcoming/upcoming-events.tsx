@@ -3,15 +3,21 @@ import { EventsGridSkeleton } from '../_components/events-grid-skeleton';
 import { useGetUpcomingEvents } from '../_lib/queries';
 
 export default function UpcomingEvents() {
-  const { data, isLoading } = useGetUpcomingEvents();
+  const { data: events, isLoading } = useGetUpcomingEvents();
 
   if (isLoading) {
     return <EventsGridSkeleton />;
   }
 
-  if (!data) {
-    return 'No events found';
+  if (!events) {
+    return (
+      <h1 className="font-rajdhani text-2xl font-bold text-white">
+        No events found!
+        <br />
+        Please reload the page.
+      </h1>
+    );
   }
 
-  return <EventsGrid events={data} />;
+  return <EventsGrid events={events} />;
 }
