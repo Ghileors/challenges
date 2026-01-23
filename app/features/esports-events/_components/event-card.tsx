@@ -32,11 +32,14 @@ export function EventCardView({ event }: Props) {
           className={cn(
             'font-rajdhani absolute top-4 left-5',
             'text-base font-bold text-[#C3FF00] uppercase',
-            'hidden group-hover:inline'
+            '-translate-x-1 -translate-y-1 opacity-0',
+            'group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100',
+            'transition-all duration-200 ease-out'
           )}
         >
           featured
         </p>
+
         <h3
           className={cn(
             'max-w-80',
